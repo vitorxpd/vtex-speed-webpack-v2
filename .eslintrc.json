@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "no-loops"
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "build"
+  ],
+  "rules": {
+    "no-undef": "off",
+    "no-var": "error"
+  }
+}

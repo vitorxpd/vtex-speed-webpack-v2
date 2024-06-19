@@ -1,0 +1,82 @@
+{
+  "name": "vtex-speed-webpack-v2",
+  "version": "1.0.0",
+  "private": false,
+  "accountName": "mystore",
+  "repository": "https://github.com/vitorxpd/vtex-speed-webpack-v2",
+  "author": {
+    "name": "Vitor Diniz",
+    "email": "dinizadroit@gmail.com",
+    "url": "https://www.vitordiniz.dev"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env webpack --watch --config ./config/webpack.dev.js",
+    "dev:checkout": "cross-env STORE_ENV=checkout webpack --watch --config ./config/webpack.dev.js",
+    "dev:orderplaced": "cross-env STORE_ENV=orderplaced webpack --watch --config ./config/webpack.dev.js",
+    "build": "cross-env webpack --config ./config/webpack.prod.js",
+    "build:checkout": "cross-env STORE_ENV=checkout webpack --config ./config/webpack.prod.js",
+    "build:orderplaced": "cross-env STORE_ENV=orderplaced webpack --config ./config/webpack.prod.js",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@commitlint/cli": "17.8.1",
+    "@commitlint/config-conventional": "17.8.1",
+    "@types/react": "16.14.60",
+    "@types/react-dom": "16.9.24",
+    "@types/styled-components": "^5.1.14",
+    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "@typescript-eslint/parser": "2.34.0",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "husky": "8.0.3",
+    "lint-staged": "14.0.1",
+    "mini-css-extract-plugin": "^2.9.0",
+    "prettier": "2.2.1",
+    "proxy-middleware": "^0.15.0",
+    "pug": "^3.0.3",
+    "pug-loader": "^2.4.0",
+    "sass": "^1.34.1",
+    "sass-loader": "^12.0.0",
+    "serve-static": "^1.14.1",
+    "style-loader": "^2.0.0",
+    "typescript": "3.9.10",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "styled-components": "^5.1.1"
+  },
+  "keywords": [
+    "VTEX",
+    "vtex-speed",
+    "vtex-local"
+  ]
+}
