@@ -2,7 +2,7 @@ const url = require('url')
 
 const { accountName } = require('../package.json')
 
-let ignoreReplace = [
+const ignoreReplace = [
   /\.js(\?.*)?$/,
   /\.css(\?.*)?$/,
   /\.svg(\?.*)?$/,
