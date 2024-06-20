@@ -31,14 +31,12 @@ function setBody(req, res, next) {
     return next()
   }
 
-  let data, end, proxiedHeaders, proxiedStatusCode, write, writeHead
-
-  data = ''
-  write = res.write
-  end = res.end
-  writeHead = res.writeHead
-  proxiedStatusCode = null
-  proxiedHeaders = null
+  let data = ''
+  let write = res.write
+  let end = res.end
+  let writeHead = res.writeHead
+  let proxiedStatusCode = null
+  let proxiedHeaders = null
 
   res.writeHead = (statusCode, headers) => {
     proxiedStatusCode = statusCode
@@ -48,6 +46,7 @@ function setBody(req, res, next) {
   res.write = (chunk) => {
     return (data += chunk)
   }
+
   res.end = (chunk, encoding) => {
     if (chunk) {
       data += chunk
