@@ -1,3 +1,4 @@
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const { merge } = require('webpack-merge')
 
 const { templates } = require('./templates.js')
@@ -11,5 +12,12 @@ module.exports = merge(common(), {
       variables.webpack.templatesBasePath,
       variables.webpack.templatesSubPaths
     ),
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false,
+        },
+      },
+    }),
   ],
 })
