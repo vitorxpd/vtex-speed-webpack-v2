@@ -11,10 +11,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env webpack --watch --config ./config/webpack.dev.js",
+    "dev": "cross-env STORE_ENV=main webpack --watch --config ./config/webpack.dev.js",
     "dev:checkout": "cross-env STORE_ENV=checkout webpack --watch --config ./config/webpack.dev.js",
     "dev:orderplaced": "cross-env STORE_ENV=orderplaced webpack --watch --config ./config/webpack.dev.js",
-    "build": "cross-env webpack --config ./config/webpack.prod.js",
+    "build": "cross-env STORE_ENV=main webpack --config ./config/webpack.prod.js",
     "build:checkout": "cross-env STORE_ENV=checkout webpack --config ./config/webpack.prod.js",
     "build:orderplaced": "cross-env STORE_ENV=orderplaced webpack --config ./config/webpack.prod.js",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",

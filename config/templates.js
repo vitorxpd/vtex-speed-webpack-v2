@@ -1,8 +1,6 @@
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const pkg = require('../package.json')
-
 function buildTemplates(templatePath) {
   return fs.readdirSync(templatePath).map((filename) => {
     const _splitPath = templatePath.split('/')
@@ -10,10 +8,7 @@ function buildTemplates(templatePath) {
 
     return new HtmlWebpackPlugin({
       template: `${templatePath}/${filename}`,
-      filename: `./html/${filePath}/${pkg.accountName}-${filename.replace(
-        'pug',
-        'html'
-      )}`,
+      filename: `./html/${filePath}/${filename.replace('pug', 'html')}`,
       inject: false,
       minify: false,
     })

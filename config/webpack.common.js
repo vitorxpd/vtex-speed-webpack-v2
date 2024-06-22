@@ -2,30 +2,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
+const { storeEnv } = require('./storeEnv.js')
 const { variables } = require('./variables.js')
 
 module.exports = () => {
-  if (process.env.STORE_ENV === 'checkout') {
-    variables.webpack.assets = './files'
-    variables.webpack.entryFile = path.resolve(
-      __dirname,
-      '../src/js/checkout-custom.js'
-    )
-    variables.webpack.outputScriptFilename = 'checkout6-custom.js'
-    variables.webpack.outputStyleFilename = 'checkout6-custom.css'
-    variables.webpack.templatesSubPaths = ['checkout']
-  }
-
-  if (process.env.STORE_ENV === 'orderplaced') {
-    variables.webpack.assets = './files'
-    variables.webpack.entryFile = path.resolve(
-      __dirname,
-      '../src/js/checkout-orderplaced.js'
-    )
-    variables.webpack.outputScriptFilename = 'checkout-confirmation4-custom.js'
-    variables.webpack.outputStyleFilename = 'checkout-confirmation4-custom.css'
-    variables.webpack.templatesSubPaths = ['checkout']
-  }
+  storeEnv(process.env.STORE_ENV)
 
   return {
     entry: variables.webpack.entryFile,
